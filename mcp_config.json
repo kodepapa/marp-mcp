@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "marp": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/YOUR_USERNAME/marp-mcp-server.git@main",
+        "marp-mcp"
+      ]
+    }
+  }
+}
