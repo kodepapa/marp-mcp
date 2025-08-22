@@ -15,7 +15,6 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from mcp.server import Server
-from mcp.server.stdio import stdio_server
 from mcp.types import (
     Tool,
     TextContent,
@@ -361,19 +360,14 @@ To view specific slide #{slide_number or 1}, open the HTML in a browser.
         )]
 
 
-async def run_server():
-    """Run the MCP server"""
+async def main():
+    """Main entry point for the MCP server"""
     logger.info("Starting Marp MCP Server...")
     
-    # Run the server using stdio transport
-    async with stdio_server() as (read_stream, write_stream):
-        await server.run(read_stream, write_stream, server.create_initialization_options())
-
-
-def main():
-    """Main entry point for the MCP server"""
-    asyncio.run(run_server())
+    # Run the server
+    async with server:
+        await server.run()
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

@@ -4,7 +4,7 @@
       "command": "uvx",
       "args": [
         "--from",
-        "git+https://github.com/YOUR_USERNAME/marp-mcp-server.git@main",
+        "git+https://github.com/kodepapa/marp-mcp.git@main",
         "marp-mcp"
       ]
     }
